@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Toolbar from './toolbar/Toolbar';
 
-
-
-const JeprDataGridApp = () => {
+const JeprDataGridApp = ({columnMetaData, data, options, toolbar}) => {
     return (
         <div>
-            <div> --- Toolbar --- </div>
+            <Toolbar {...toolbar} />
             <div>
                 --- Table ---
                 <div> -- Titles -- </div>
@@ -21,11 +20,13 @@ const JeprDataGridApp = () => {
 };
 
 JeprDataGridApp.defaultProps = {
-    type: 'checkbox',
+    options: {},
+    toolbar: {},
 };
 
 JeprDataGridApp.propTypes = {
-    label: PropTypes.string.isRequired,
+    columnMetaData: PropTypes.array.isRequired,
+    data: PropTypes.array.isRequired,
 };
 
 export default JeprDataGridApp;
