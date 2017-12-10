@@ -16,7 +16,7 @@ jeprDataGrid: {
             sortAction: '', //(optional)
             clearAction: '', //(optional for filter and sort)
         },
-    ]
+    ],
     data: [],
     options: {
         customClass: {
@@ -27,10 +27,14 @@ jeprDataGrid: {
             classFooter: '',
         },
     },
-    toolbarButtons: [
-        {
-            buttonIcon: '',
-            buttonAction: '',
-        },
-    ],
+    toolbar: {
+        toolbarButtons: [
+                {
+                    buttonIcon: '',
+                    buttonAction: '',
+                },
+            ],
+         titleTable: '',
+    }
+    
 }
