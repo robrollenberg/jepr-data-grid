@@ -2,19 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Toolbar from './toolbar/Toolbar';
+import DataGrid from './datagrid/DataGrid';
 
 const JeprDataGridApp = ({columnMetaData, data, options, toolbar}) => {
     return (
         <div>
             <Toolbar {...toolbar} />
-            <div>
-                --- Table ---
-                <div> -- Titles -- </div>
-                <div> -- Filter -- </div>
-                <div> -- Rows -- </div>
-                <div> -- Footer -- </div>
-            </div>
-
+            <DataGrid columnMetaData={columnMetaData} data={data} options={options} />
         </div>
     );
 };

@@ -26,6 +26,7 @@ jeprDataGrid: {
             classBody: '',
             classFooter: '',
         },
+        showFooter: '',
     },
     toolbar: {
         toolbarButtons: [

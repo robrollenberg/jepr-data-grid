@@ -9,21 +9,21 @@ const Example = () => {
             firstName: 'Rob',
             lastName: 'Rollenberg',
             age: 36,
-            city: 'Sint Pancras'
+            city: 'Sint Pancras',
         },
         {
             id: 2,
             firstName: 'Noortje',
             lastName: 'Janssen',
             age: 37,
-            city: 'Alkmaar'
+            city: 'Alkmaar',
         },
         {
             id: 3,
             firstName: 'Julia',
             lastName: 'Jasper',
             age: 9,
-            city: 'Sint Pancras'
+            city: 'Sint Pancras',
         },
     ];
 
@@ -37,9 +37,15 @@ const Example = () => {
                 columnName: 'city',
                 displayName: 'Woonplaats',
             },
+            {
+                columnName: 'age',
+                displayName: 'Leeftijd',
+            },
         ],
-        data: data,
+        data,
         options: {
+            showFooter: false,
+            classTableAdditional: "col-md-10 col-md-offset-2",
         },
         toolbar: {
             toolbarButtons: [
@@ -49,7 +55,7 @@ const Example = () => {
                 },
             ],
             titleTable: 'Example grid',
-        }
+        },
     };
 
     return (
