@@ -3,7 +3,9 @@ import React from 'react';
 const DataGridHead = props => {
     return (
         <thead>
-            {props.children}
+            <tr>
+                {props.columnMetaData}
+            </tr>
         </thead>
     )
 };

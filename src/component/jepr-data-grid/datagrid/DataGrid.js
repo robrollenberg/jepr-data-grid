@@ -5,13 +5,13 @@ import DataGridHeader from './header/DataGridHeader';
 import DataGridBody from './body/DataGridBody';
 import DataGridFooter from './footer/DataGridFooter';
 
-const DataGrid = ({ columnMetaData, data, options }) => {
+const DataGrid = ({ data, options, children }) => {
     const { classTable, classTableAdditional, showFooter } = options;
 
     return (
         <table className={`${classTable} ${classTableAdditional}`}>
-            <DataGridHeader columnMetaData={columnMetaData} />
-            <DataGridBody data={data} columnMetaData={columnMetaData} />
+            <DataGridHeader columnMetaData={children}/>
+            <DataGridBody data={data} columnMetaData={children} />
 
             {showFooter && <DataGridFooter /> }
         </table>
@@ -27,7 +27,6 @@ DataGrid.defaultProps = {
 
 DataGrid.propTypes = {
     data: PropTypes.array.isRequired,
-    columnMetaData: PropTypes.array.isRequired,
     options: PropTypes.object,
     showFooter: PropTypes.bool,
     classTable: PropTypes.string,

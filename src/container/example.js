@@ -1,6 +1,7 @@
 import React from 'react';
 
 import JeprDataGridApp from '../component/jepr-data-grid/JeprDataGridApp';
+import DataHeaderColumn from '../component/jepr-data-grid/DataHeaderColumn';
 
 const Example = () => {
     const data = [
@@ -28,20 +29,6 @@ const Example = () => {
     ];
 
     const jeprDataGrid = {
-        columnMetaData: [
-            {
-                columnName: 'firstName',
-                displayName: 'Voornaam',
-            },
-            {
-                columnName: 'city',
-                displayName: 'Woonplaats',
-            },
-            {
-                columnName: 'age',
-                displayName: 'Leeftijd',
-            },
-        ],
         data,
         options: {
             showFooter: false,
@@ -59,7 +46,12 @@ const Example = () => {
     };
 
     return (
-        <JeprDataGridApp {...jeprDataGrid} />
+        <JeprDataGridApp {...jeprDataGrid}>
+            <DataHeaderColumn columnName={'firstName'} displayName={'Voornaam'} />
+            <DataHeaderColumn columnName={'lastName'} displayName={'Achternaam'} />
+            <DataHeaderColumn columnName={'city'} displayName={'Woonplaats'} />
+            <DataHeaderColumn columnName={'age'} displayName={'Leeftijd'} />
+        </JeprDataGridApp>
     );
 };
 

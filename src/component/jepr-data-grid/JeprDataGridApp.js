@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import Toolbar from './toolbar/Toolbar';
 import DataGrid from './datagrid/DataGrid';
 
-const JeprDataGridApp = ({columnMetaData, data, options, toolbar}) => {
+const JeprDataGridApp = ({data, options, toolbar, children}) => {
     return (
         <div>
             <Toolbar {...toolbar} />
-            <DataGrid columnMetaData={columnMetaData} data={data} options={options} />
+            <DataGrid data={data} options={options}>
+                {children}
+            </DataGrid>
         </div>
     );
 };
@@ -19,7 +21,6 @@ JeprDataGridApp.defaultProps = {
 };
 
 JeprDataGridApp.propTypes = {
-    columnMetaData: PropTypes.array.isRequired,
     data: PropTypes.array.isRequired,
 };
 

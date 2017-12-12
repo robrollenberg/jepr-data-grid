@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import DataGridItem from './DataGridItem';
 
 const DataGridRow = ({ columnMetaData, row, options }) => (
-    <tr>
-      { columnMetaData.map((item, index) => <DataGridItem key={index} item={item} row={row} />) }
-    </tr>
-);
+        <tr>
+            { columnMetaData.map((item, index) => <DataGridItem key={index} item={item.props} row={row} />) }
+        </tr>
+    );
 
 DataGridRow.defaultProps = {
     options: {},
