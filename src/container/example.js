@@ -32,7 +32,8 @@ const Example = () => {
         data,
         options: {
             showFooter: false,
-            classTableAdditional: "col-md-10 col-md-offset-2",
+            classTableAdditional: 'col-md-10 col-md-offset-1',
+
         },
         toolbar: {
             toolbarButtons: [
@@ -47,10 +48,10 @@ const Example = () => {
 
     return (
         <JeprDataGridApp {...jeprDataGrid}>
-            <DataHeaderColumn columnName={'firstName'} displayName={'Voornaam'} />
-            <DataHeaderColumn columnName={'lastName'} displayName={'Achternaam'} />
-            <DataHeaderColumn columnName={'city'} displayName={'Woonplaats'} />
-            <DataHeaderColumn columnName={'age'} displayName={'Leeftijd'} />
+            <DataHeaderColumn columnName={'firstName'} displayName={'Voornaam'} search={true} searchValue={'Rob'} />
+            <DataHeaderColumn columnName={'lastName'} displayName={'Achternaam'} search={true} searchValue={''} />
+            <DataHeaderColumn columnName={'city'} displayName={'Woonplaats'} search={true} searchValue={''} />
+            <DataHeaderColumn columnName={'age'} displayName={'Leeftijd'} search={true} searchValue={''} />
         </JeprDataGridApp>
     );
 };
