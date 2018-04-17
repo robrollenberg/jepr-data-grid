@@ -30,7 +30,11 @@ const Example = () => {
     ];
 
     const openItem = (id) => {
-      alert('Open item' + id);
+      alert('Open item ' + id);
+    };
+
+    const deleteItem = (id) => {
+        alert('Delete item ' + id);
     };
 
     const jeprDataGrid = {
@@ -58,7 +62,7 @@ const Example = () => {
             {
                 name: 'Delete item',
                 button: 'glyphicon glyphicon-trash',
-                action: openItem,
+                action: deleteItem,
             },
         ],
     };
