@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import DataGridRow from './DataGridRow';
 
-const DataGridBody = ({ columnMetaData, data, options }) => (
+const DataGridBody = ({ columnMetaData, data, options, actionButtons }) => (
     <tbody>
-        { data.map((row, index) => <DataGridRow key={index} row={row} columnMetaData={columnMetaData} />) }
+        { data.map((row, index) => <DataGridRow key={index} row={row} columnMetaData={columnMetaData} actionButtons={actionButtons} />) }
     </tbody>
 );
 

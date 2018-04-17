@@ -6,14 +6,13 @@ import DataGridBody from './body/DataGridBody';
 import DataGridFooter from './footer/DataGridFooter';
 
 class DataGrid extends Component {
-
     render() {
         return (
             <div className={`${this.props.options.classTableAdditional}`}>
                 <table className={`table table-condensed table-hover table-striped ${this.props.options.classTable}`}>
                     <DataGridHeader columnMetaData={this.props.children} />
 
-                    <DataGridBody data={this.props.data} columnMetaData={this.props.children} />
+                    <DataGridBody data={this.props.data} columnMetaData={this.props.children} actionButtons={this.props.actionButtons}/>
 
                     {this.props.options.showFooter && <DataGridFooter /> }
                 </table>

@@ -2,6 +2,7 @@ import React from 'react';
 
 import JeprDataGridApp from '../component/jepr-data-grid/JeprDataGridApp';
 import DataHeaderColumn from '../component/jepr-data-grid/DataHeaderColumn';
+import DataHeaderActionButtons from '../component/jepr-data-grid/datagrid/body/DataGridRowActionButtons'
 
 const Example = () => {
     const data = [
@@ -28,6 +29,10 @@ const Example = () => {
         },
     ];
 
+    const openItem = (id) => {
+      alert('Open item' + id);
+    };
+
     const jeprDataGrid = {
         data,
         options: {
@@ -44,10 +49,22 @@ const Example = () => {
             ],
             titleTable: 'Example grid',
         },
+        actionButtons: [
+            {
+                name: 'Open item',
+                button: 'glyphicon glyphicon-pencil',
+                action: openItem,
+            },
+            {
+                name: 'Delete item',
+                button: 'glyphicon glyphicon-trash',
+                action: openItem,
+            },
+        ],
     };
 
     return (
-        <JeprDataGridApp {...jeprDataGrid}>
+        <JeprDataGridApp {...jeprDataGrid} >
             <DataHeaderColumn columnName={'firstName'} displayName={'Voornaam'} search={true} searchValue={'Rob'} />
             <DataHeaderColumn columnName={'lastName'} displayName={'Achternaam'} search={true} searchValue={''} />
             <DataHeaderColumn columnName={'city'} displayName={'Woonplaats'} search={true} searchValue={''} />
