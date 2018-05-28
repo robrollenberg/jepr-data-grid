@@ -33,8 +33,8 @@ class DataGridFilter extends Component {
 
     render() {
         return (
-          <tr>
-              { this.state.filter.map((item, index) => <DataGridFilterItem key={index} item={item} handleInputChange={this.handleInputChange} />) }
+            <tr>
+                { this.state.filter.map((item, index) => <DataGridFilterItem key={index} item={item} handleInputChange={this.handleInputChange} />) }
             </tr>
         );
     }

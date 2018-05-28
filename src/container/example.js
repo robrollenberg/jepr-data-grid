@@ -2,7 +2,7 @@ import React from 'react';
 
 import JeprDataGridApp from '../component/jepr-data-grid/JeprDataGridApp';
 import DataHeaderColumn from '../component/jepr-data-grid/DataHeaderColumn';
-import DataHeaderActionButtons from '../component/jepr-data-grid/datagrid/body/DataGridRowActionButtons'
+import DataHeaderActionButtons from '../component/jepr-data-grid/datagrid/body/DataGridRowActionButton'
 
 const Example = () => {
     const data = [
@@ -69,7 +69,7 @@ const Example = () => {
 
     return (
         <JeprDataGridApp {...jeprDataGrid} >
-            <DataHeaderColumn columnName={'firstName'} displayName={'Voornaam'} search={true} searchValue={'Rob'} />
+            <DataHeaderColumn columnName={'firstName'} displayName={'Voornaam'} search={true} searchValue={'Rob'} width={200} />
             <DataHeaderColumn columnName={'lastName'} displayName={'Achternaam'} search={true} searchValue={''} />
             <DataHeaderColumn columnName={'city'} displayName={'Woonplaats'} search={true} searchValue={''} />
             <DataHeaderColumn columnName={'age'} displayName={'Leeftijd'} search={true} searchValue={''} />

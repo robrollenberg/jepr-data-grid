@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DataGridItem = ({ row, item }) => {
+const DataGridItem = ({ row, item, columnWidths }) => {
     return (
-        <td>
+        <td width={columnWidths[item.columnName]}>
             { row[item.columnName] }
         </td>
     )

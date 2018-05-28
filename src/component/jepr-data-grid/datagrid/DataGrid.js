@@ -1,25 +1,36 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import setColumnSizes from '../helpers/setColumnSizes';
 import DataGridHeader from './header/DataGridHeader';
 import DataGridBody from './body/DataGridBody';
 import DataGridFooter from './footer/DataGridFooter';
 
 class DataGrid extends Component {
+    constructor(props){
+      super(props);
+
+        this.state = {
+            columnWidths: setColumnSizes(props.children),
+            active: undefined,
+        };
+    };
+
     render() {
+        const { options, children: columnMetaData, actionButtons, data } = this.props;
+
         return (
-            <div className={`${this.props.options.classTableAdditional}`}>
-                <table className={`table table-condensed table-hover table-striped ${this.props.options.classTable}`}>
-                    <DataGridHeader columnMetaData={this.props.children} />
-
-                    <DataGridBody data={this.props.data} columnMetaData={this.props.children} actionButtons={this.props.actionButtons}/>
-
-                    {this.props.options.showFooter && <DataGridFooter /> }
+            <div className={`${options.classTableAdditional}`}>
+                <table className={`table table-hover table-striped table-bordered ${options.classTable}`}
+                >
+                    <DataGridHeader columnMetaData={columnMetaData} actionButtons={actionButtons} />
+                    <DataGridBody data={data} columnMetaData={columnMetaData} columnWidths={this.state.columnWidths} actionButtons={actionButtons} />
+                    {options.showFooter && <DataGridFooter/>}
                 </table>
             </div>
         );
     }
-};
+}
 
 DataGrid.defaultProps = {
     options: {
